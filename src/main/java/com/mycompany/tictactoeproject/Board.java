@@ -49,6 +49,8 @@ public class Board {
      * @return true if valid move
      */
     public boolean placeTile(int row, int col, int player){
+        row--;
+        col--;
         if (board[row][col] == Tile.EMPTY) {
             if (player == 1) {
                 board[row][col] = Tile.CROSS;
@@ -65,13 +67,33 @@ public class Board {
     
 
     public boolean checkVictory(){
+        //if(board[0][0].equals((Tile.CROSS || Tile.NOUGHT))){
+            
+        //}
+        //if top row equals all the same
+        //or middle row all same
+        //or bottom row all same
         
+        //or left col all same
+        //or middle col all same
+        //or right sol all same
+        
+        //or top left to bottom right all same
+        //or top right to bottom left all same
         return false;
     }
     
     public boolean checkFull(){
-        
-        return false;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                //still at least 1 empty tile left
+                if(board[i][j].equals(Tile.EMPTY)){
+                    return false;
+                }
+            }
+        }
+        //full board
+        return true;
     }
     
 }

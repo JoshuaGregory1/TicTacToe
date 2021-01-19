@@ -22,8 +22,8 @@ public class TicTacToe {
         boolean playAgain = true;
         while(playAgain){
             currentPlayer = 2;
-            boolean noVictory = true;
-            while(noVictory){
+            boolean noVictoryOrFull = true;
+            while(noVictoryOrFull){
                 System.out.println("----------------------");
                 board.show();
                 
@@ -52,12 +52,19 @@ public class TicTacToe {
                 }
                 
                 if(board.checkVictory()){
-                    noVictory = false;
+                    noVictoryOrFull = false;
                     System.out.println("Player" + currentPlayer + "Wins!");
                 }
+                
+                if(board.checkFull()){
+                    noVictoryOrFull = false;
+                    System.out.println("It's a draw!");
+                }
+
             }
             
             //play again?
+            //this is bugged i think
             System.out.println("Play again (y/n)?");
             String input = sc.nextLine();
             if (input.equals("n")){
