@@ -6,8 +6,8 @@ package com.mycompany.tictactoeproject;
  */
 public enum Tile {
     EMPTY(" "),
-    NOUGHT("O"),
-    CROSS("X");
+    NOUGHT("o"),
+    CROSS("x");
     
     private final String label;
     
