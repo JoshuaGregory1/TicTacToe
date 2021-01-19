@@ -34,24 +34,25 @@ public class TicTacToe {
                     currentPlayer = 1;
                 }
                 
+                int row = 0;
+                int col = 0;
                 boolean invalidMove = true;
                 while(invalidMove){
                     System.out.println("");
                     System.out.println("Player " + currentPlayer + "'s Turn (" + this.returnLabel(currentPlayer) + ")...");
 
                     System.out.println("Choose row: ");
-                    int row = sc.nextInt();
+                    row = sc.nextInt();
 
                     System.out.println("Choose column: ");
-                    int col = sc.nextInt();
+                    col = sc.nextInt();
 
                     if(board.placeTile(row, col, currentPlayer)){
                         invalidMove = false;
                     }
-               
                 }
                 
-                if(board.checkVictory()){
+                if(board.checkVictory(row, col, currentPlayer)){
                     noVictoryOrFull = false;
                     System.out.println("Player" + currentPlayer + "Wins!");
                 }

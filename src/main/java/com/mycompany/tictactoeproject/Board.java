@@ -66,8 +66,54 @@ public class Board {
     }
     
 
-    public boolean checkVictory(){
-        //if(board[0][0].equals((Tile.CROSS || Tile.NOUGHT))){
+    public boolean checkVictory(int row, int col, int player){
+        row--;
+        col--;
+        boolean win = false;
+        switch(player) {
+            //checking x
+            case 1:
+                //check up
+//                if(row > 0){
+//                    if(board[])
+//                }
+
+                break;
+            //checking o
+            case 2:
+                
+                break;
+            default:
+                System.out.println("Error");
+        }
+
+        return win;
+    }
+    
+//    private boolean checkUp(int row, int col, Tile tile) {
+//        if (board[row][col]) {
+//            
+//        }
+//        return false;
+//    }
+//    
+//    private boolean checkDown(int row, int col, Tile tile) {
+//        
+//        return false;
+//    }
+//
+//    private boolean checkLeft(int row, int col, Tile tile) {
+//        
+//        return false;
+//    }
+//    
+//    private boolean checkRight(int row, int col, Tile tile) {
+//        
+//         return false;
+//    }
+    
+
+    //if(board[0][0].equals((Tile.CROSS || Tile.NOUGHT))){
             
         //}
         //if top row equals all the same
@@ -80,8 +126,12 @@ public class Board {
         
         //or top left to bottom right all same
         //or top right to bottom left all same
-        return false;
-    }
+    
+//    win = checkUp(row, col, Tile.CROSS);
+//                win = checkDown(row, col, Tile.CROSS);
+//                win = checkLeft(row, col, Tile.CROSS);
+//                win = checkRight(row, col, Tile.CROSS);
+    
     
     public boolean checkFull(){
         for (int i = 0; i < rows; i++) {
@@ -95,5 +145,7 @@ public class Board {
         //full board
         return true;
     }
+
+
     
 }
