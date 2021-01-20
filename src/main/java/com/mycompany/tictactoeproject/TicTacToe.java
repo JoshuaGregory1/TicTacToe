@@ -14,7 +14,6 @@ public class TicTacToe {
         System.out.println("Welcome to TicTacToe");
         TicTacToe game = new TicTacToe();
         game.run();
-
     }
     
     public void run(){
@@ -83,5 +82,5 @@ public class TicTacToe {
             return "o";
         }
     }
-
+    
 }
