@@ -34,8 +34,8 @@ public class TicTacToe {
                     currentPlayer = 1;
                 }
                 
-                int row = 0;
-                int col = 0;
+                int row;
+                int col;
                 boolean invalidMove = true;
                 while(invalidMove){
                     System.out.println("");
@@ -43,35 +43,36 @@ public class TicTacToe {
 
                     System.out.println("Choose row: ");
                     row = sc.nextInt();
+                    sc.nextLine();
 
                     System.out.println("Choose column: ");
                     col = sc.nextInt();
+                    sc.nextLine();
 
                     if(board.placeTile(row, col, currentPlayer)){
                         invalidMove = false;
                     }
                 }
-                
-                if(board.checkVictory(row, col, currentPlayer)){
+               
+                if(board.checkVictory(currentPlayer)){
                     noVictoryOrFull = false;
-                    System.out.println("Player" + currentPlayer + "Wins!");
-                }
-                
-                if(board.checkFull()){
+                    board.show();
+                    System.out.println("Player " + currentPlayer + " Wins!");
+                } else if(board.checkFull()){
                     noVictoryOrFull = false;
+                    board.show();
                     System.out.println("It's a draw!");
                 }
-
             }
-            
+           
             //play again?
             //this is bugged i think
             System.out.println("Play again (y/n)?");
             String input = sc.nextLine();
             if (input.equals("n")){
-                board.setUp();
                 playAgain = false;
             }
+            board.setUp();
         }
     }
     
@@ -82,6 +83,5 @@ public class TicTacToe {
             return "o";
         }
     }
-    
 
 }

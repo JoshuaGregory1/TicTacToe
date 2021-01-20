@@ -19,5 +19,10 @@ public enum Tile {
     public String toString() {
         return label;
     }
+    
+    //returns true if both input tiles are equal (equal by their strings)
+    public boolean equals(Tile t1, Tile t2) {
+        return t1.toString().equals(t2.toString());
+    }
 }
 
