@@ -33,22 +33,31 @@ public class TicTacToe {
                     currentPlayer = 1;
                 }
                 
-                int row;
-                int col;
+                String row;
+                String col;
                 boolean invalidMove = true;
                 while(invalidMove){
                     System.out.println("");
                     System.out.println("Player " + currentPlayer + "'s Turn (" + this.returnLabel(currentPlayer) + ")...");
 
+                    //input row
                     System.out.println("Choose row: ");
-                    row = sc.nextInt();
-                    sc.nextLine();
-
+                    row = sc.nextLine();
+                    while (!row.matches("[1-3]")) {
+                        System.out.println("Incorrect input, please enter again.");
+                        row = sc.nextLine();
+                    }
+                    
+                    //input column
                     System.out.println("Choose column: ");
-                    col = sc.nextInt();
-                    sc.nextLine();
+                    col = sc.nextLine();
+                    while (!col.matches("[1-3]")) {
+                        System.out.println("Incorrect input, please enter again.");
+                        col = sc.nextLine();
+                    }
 
-                    if(board.placeTile(row, col, currentPlayer)){
+
+                    if(board.placeTile(Integer.parseInt(row), Integer.parseInt(col), currentPlayer)){
                         invalidMove = false;
                     }
                 }
@@ -65,7 +74,6 @@ public class TicTacToe {
             }
            
             //play again?
-            //this is bugged i think
             System.out.println("Play again (y/n)?");
             String input = sc.nextLine();
             if (input.equals("n")){
