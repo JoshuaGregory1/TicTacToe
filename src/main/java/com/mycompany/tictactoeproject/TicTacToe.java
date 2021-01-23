@@ -84,11 +84,7 @@ public class TicTacToe {
     }
     
     public String returnLabel(int player){
-        if(player == 1){
-            return "x";
-        } else {
-            return "o";
-        }
+        return player == 1 ? "x" : "o";
     }
     
 }
